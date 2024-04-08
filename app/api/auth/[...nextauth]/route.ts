@@ -1,11 +1,11 @@
 import nextAuth from "@/node_modules/next-auth/index";
 
-import CredentialsProvider from 'next-auth/providers/credentials';
+import CredentialsProvider from '@/node_modules/next-auth/providers/credentials';
 
 const handler = nextAuth({
     providers: [
         CredentialsProvider({
-            name: 'Credentials',
+            name: "Email",
             credentials: {
                 Email:{label:`email`, type:`text`, placeholder:`Enter Email`},
                 Password: {label:`password`, type:`password`, placeholder:`Enter Password`}
@@ -26,3 +26,6 @@ const handler = nextAuth({
 
 export const GET = handler;
 export const POST = handler;
+
+console.log(GET);
+console.log(POST);
