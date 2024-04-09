@@ -11,7 +11,10 @@ export const NEXT_AUTH = {
                 Password: {label:`password`, type:`password`, placeholder:`Enter Password`}
             },
             async authorize(credentials:any) {
-                console.log(credentials);
+                if (credentials.Email=="" || credentials.password=="") {
+                    console.log("Validation failed");
+                    return null;
+                }
                 //backend validation
                 //if validation fails auth library automaticaly shows error on login screen
                 return {
